@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery Shopping Portal</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="login_page">
+      <div id="login_disp">
+        <div id="sign_in">
+          <button id="user_login">Login</button>
+          <button id="user_signup">Sign_up</button>
+        </div>
+        <div id="login">
+          <label for="userid">User ID:</label>
+          <input type="text" id="userid" name="userid" /><br /><br />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" /><br /><br />
+          <button id="login_submit">Submit</button>
+        </div>
+        <div id="sign_up">
+          <label for="newUserid">Create User ID:</label>
+          <input type="text" id="newUserid" name="newUserid" /><br /><br />
+          <label for="password1">Create Password:</label>
+          <input type="password" id="password1" name="password1" /><br /><br />
+          <label for="password2">Re-enter Password:</label>
+          <input type="password" id="password2" name="password2" /><br /><br />
+          <button id="signup_submit">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div id="home-page">
+      <div id="home-header">
+        <div>Shop-At-Hand</div>
+        <div id="username"></div>
+        <button id="log-out">
+          <img id="reload" src="./assets/logout.jpg" alt="reload" />
+        </button>
+        <button id="cart">
+          <img id="cart-icon" src="./assets/Cart_icon.png" alt="cart" />
+        </button>
+      </div>
+      <div id="search-tab">
+        <div>Search</div>
+        <input list="item-list" name="products" id="products" />
+        <datalist id="item-list"></datalist>
+        <button id="search">
+          <img id="search-icon" src="./assets/searchIcon.jpg" alt="search" />
+        </button>
+      </div>
+      <div id="product-container">
+        <div id="select-tab">
+          <button id="vegetables">Vegetables</button>
+          <button id="fruits">Fruits</button>
+          <button id="daily_staples">Daily Staples</button>
+          <button id="household">Household and other</button>
+        </div>
+        <div id="card-container">
+          <div class="product-card" id="product-card">
+            <div class="product-category"></div>
+            <div class="product-img">
+              <img class="product-icon" />
+            </div>
+            <div class="product-details">
+              <div class="product-name"></div>
+              <div class="product-quantity">
+                <label>Quantity</label>
+                <input
+                  type="number"
+                  class="quantity-input"
+                  value="1"
+                  min="1"
+                  max="10"
+                  oninput="this.value=(parseInt(this.value)<1)?1:parseInt(this.value)>10?10:this.value"
+                />
+              </div>
+              <div class="product-cost"></div>
+              <button class="add-cart">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div id="append-card"></div>
+      </div>
+    </div>
+    <div id="cart-page">
+      <div id="display-cart">
+        <div id="cart-header">
+          <div>Shopping Cart</div>
+          <button id="home-icon">
+            <img id="home-img" src="./assets/home_icon.jfif" alt="home" />
+          </button>
+          <div id="user-name"></div>
+          <button id="logout">
+            <img id="logout-icon" src="./assets/logout.jpg" alt="logout" />
+          </button>
+        </div>
+        <button id="deselect-all">Deselect all items</button>
+        <div id="sample-card">
+          <div class="cart-card">
+            <input type="checkbox" class="mycheck" />
+            <label for="myCheck"
+              ><div class="item-card">
+                <div class="item-category"></div>
+                <div class="item-image">
+                  <img class="item-icon" />
+                </div>
+                <div class="item-details">
+                  <div class="item-name"></div>
+                  <div class="item-cost"></div>
+                  <div class="item-quantity"></div>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div id="items-in-cart"></div>
+      </div>
+      <div id="shopping">
+        <div id="total-cost">
+          <div>
+            Subtotal ( <span id="number-of-items"></span> items) : &#x20B9;
+            <span id="purchase-cost"></span>
+          </div>
+          <div><button id="proceed-to-buy">Proceed to buy</button></div>
+        </div>
+        <div id="similar-display">
+          <div id="similar-item-header">Similar items</div>
+          <div id="clone-card"></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
